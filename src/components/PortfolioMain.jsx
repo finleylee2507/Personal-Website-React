@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import "./PortfolioMain.css";
 import finleysLogo from '../images/logo.png';
 import headerPortrait from "../images/header-portrait.png";
@@ -7,9 +7,12 @@ import personalHealthAssistant from "../images/personal-health-assistant.png";
 import spermCellGui from "../images/sperm-cell-gui.png";
 import objectDetector from "../images/object-detector.png";
 import flashtastic from "../images/flashtastic.png";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faBriefcase, faGear, faSchool} from "@fortawesome/free-solid-svg-icons";
+import {faCalendar} from "@fortawesome/free-regular-svg-icons";
 
 function PortfolioMain({}) {
-
+    const [currentAboutTab, setCurrentAboutTab] = useState("skills");
 
     return (
         <>
@@ -66,18 +69,29 @@ function PortfolioMain({}) {
                                     and Machine Learning. </p>
 
                                 <div className="qualification-titles-tabs">
-                                    <p className="tab-links active-link"><i
-                                        className="fa-solid fa-gear"></i>
+                                    <p className={`tab-links ${currentAboutTab === "skills" ? "active-link" : ""}`}
+                                       onClick={() => {
+                                           setCurrentAboutTab("skills");
+                                       }}>
+                                        <FontAwesomeIcon icon={faGear} className="about-me-icons"/>
                                         Skills</p>
-                                    <p className="tab-links"><i
-                                        className="fa-solid fa-briefcase"></i>
+                                    <p className={`tab-links ${currentAboutTab === "experience" ? "active-link" : ""}`}
+                                       onClick={() => {
+                                           setCurrentAboutTab("experience");
+                                       }}>
+                                        <FontAwesomeIcon icon={faBriefcase} className="about-me-icons"/>
                                         Experience</p>
-                                    <p className="tab-links "><i
-                                        className="fa-solid fa-school"></i>
+                                    <p className={`tab-links ${currentAboutTab === "education" ? "active-link" : ""}`}
+                                       onClick={() => {
+                                           setCurrentAboutTab("education");
+                                       }}>
+                                        <FontAwesomeIcon icon={faSchool} className="about-me-icons"/>
                                         Education</p>
                                 </div>
 
-                                <div className="qualification-content active-tab" id="skills">
+                                <div
+                                    className={`qualification-content ${currentAboutTab === "skills" ? "active-tab" : ""}`}
+                                    id="skills">
                                     <ul>
                                         <li>
                                             <h3 className="qualification-title">Frontend Languages</h3>
@@ -95,7 +109,9 @@ function PortfolioMain({}) {
                                     </ul>
                                 </div>
 
-                                <div className="qualification-content" id="experience">
+                                <div
+                                    className={`qualification-content ${currentAboutTab === "experience" ? "active-tab" : ""}`}
+                                    id="experience">
 
 
                                     <div className="qualification-data">
@@ -103,7 +119,7 @@ function PortfolioMain({}) {
                                             <h3 className="qualification-title">Software Engineering Intern</h3>
                                             <span className="qualification-subtitle">DoubleVerify</span>
                                             <div className="qualification-calendar">
-                                                <i className="fa-regular fa-calendar"></i>
+                                               <FontAwesomeIcon icon={faCalendar} className="calendar-icon"/>
                                                 Jun. 2022 - Sep. 2022
                                             </div>
                                         </div>
@@ -126,7 +142,7 @@ function PortfolioMain({}) {
                                                 Intern</h3>
                                             <span className="qualification-subtitle">AI5YUE Technology</span>
                                             <div className="qualification-calendar">
-                                                <i className="fa-regular fa-calendar"></i>
+                                                <FontAwesomeIcon icon={faCalendar} className="calendar-icon"/>
                                                 May 2021 – Aug. 2021
                                             </div>
                                         </div>
@@ -139,7 +155,7 @@ function PortfolioMain({}) {
                                                 Intern</h3>
                                             <span className="qualification-subtitle">iSoftStone Technology</span>
                                             <div className="qualification-calendar">
-                                                <i className="fa-regular fa-calendar"></i>
+                                                <FontAwesomeIcon icon={faCalendar}className="calendar-icon"/>
                                                 May 2019 – Jul. 2019
                                             </div>
                                         </div>
@@ -162,7 +178,7 @@ function PortfolioMain({}) {
                                             <span
                                                 className="qualification-subtitle">Washington University in St. Louis</span>
                                             <div className="qualification-calendar">
-                                                <i className="fa-regular fa-calendar"></i>
+                                                <FontAwesomeIcon icon={faCalendar} className="calendar-icon"/>
                                                 Aug. 2021 – Jan. 2022
                                             </div>
                                         </div>
@@ -173,14 +189,16 @@ function PortfolioMain({}) {
                                 </div>
 
 
-                                <div className="qualification-content" id="education">
+                                <div
+                                    className={`qualification-content ${currentAboutTab === "education" ? "active-tab" : ""}`}
+                                    id="education">
 
                                     <div className="qualification-data">
                                         <div>
                                             <h3 className="qualification-title">Masters in Computer Science</h3>
                                             <span className="qualification-subtitle">Northwestern University</span>
                                             <div className="qualification-calendar">
-                                                <i className="fa-regular fa-calendar"></i>
+                                                <FontAwesomeIcon icon={faCalendar} className="calendar-icon"/>
                                                 Sep. 2022 - Present
                                             </div>
                                         </div>
@@ -204,7 +222,7 @@ function PortfolioMain({}) {
                                             <span
                                                 className="qualification-subtitle">Washington University in St. Louis</span>
                                             <div className="qualification-calendar">
-                                                <i className="fa-regular fa-calendar"></i>
+                                                <FontAwesomeIcon icon={faCalendar} className="calendar-icon"/>
                                                 Aug. 2018 - May 2022
                                             </div>
                                         </div>
@@ -213,9 +231,9 @@ function PortfolioMain({}) {
 
                                 </div>
                             </div>
-                            <div className="about-col-2-row-2">
-                                <a href="my-resume.pdf" download className="btn download-btn">Download Resume</a>
-                            </div>
+                            {/*<div className="about-col-2-row-2">*/}
+                            {/*    <a href="my-resume.pdf" download className="btn download-btn">Download Resume</a>*/}
+                            {/*</div>*/}
 
 
                         </div>
