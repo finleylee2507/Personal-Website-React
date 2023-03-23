@@ -10,6 +10,8 @@ import flashtastic from "../images/flashtastic.png";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faBriefcase, faGear, faSchool} from "@fortawesome/free-solid-svg-icons";
 import {faCalendar} from "@fortawesome/free-regular-svg-icons";
+import {Badge, Button, Card, Group, Image, Text} from '@mantine/core';
+import {Carousel} from "@mantine/carousel";
 
 function PortfolioMain({}) {
     const [currentAboutTab, setCurrentAboutTab] = useState("skills");
@@ -119,7 +121,7 @@ function PortfolioMain({}) {
                                             <h3 className="qualification-title">Software Engineering Intern</h3>
                                             <span className="qualification-subtitle">DoubleVerify</span>
                                             <div className="qualification-calendar">
-                                               <FontAwesomeIcon icon={faCalendar} className="calendar-icon"/>
+                                                <FontAwesomeIcon icon={faCalendar} className="calendar-icon"/>
                                                 Jun. 2022 - Sep. 2022
                                             </div>
                                         </div>
@@ -155,7 +157,7 @@ function PortfolioMain({}) {
                                                 Intern</h3>
                                             <span className="qualification-subtitle">iSoftStone Technology</span>
                                             <div className="qualification-calendar">
-                                                <FontAwesomeIcon icon={faCalendar}className="calendar-icon"/>
+                                                <FontAwesomeIcon icon={faCalendar} className="calendar-icon"/>
                                                 May 2019 – Jul. 2019
                                             </div>
                                         </div>
@@ -245,6 +247,7 @@ function PortfolioMain({}) {
             </div>
 
             {/*    Portfolio Section*/}
+            {/*Todo: make it modular and reusable*/}
 
 
             <div id="portfolio">
@@ -252,89 +255,198 @@ function PortfolioMain({}) {
                     <h1 className="section-title" id="my-projects-title">My Projects</h1>
                     <p id="my-projects-subtitle">Here are a few past course projects I've worked on. Want a demo? <a
                         href="mailto:fenglieli2024@u.northwestern.edu">Email me</a>. </p>
+                    <div className="carousel-container">
+                        <Carousel withIndicators slideSize="55%" align="start" loop classNames={{
+                            indicators: "carousel-indicator-container",
+                            indicator: "carousel-indicator"
+                        }}>
+                            <Carousel.Slide>
+                                {/*Flashtastic*/}
+                                <Card shadow="sm" padding="lg" radius="md" withBorder sx={{width: "700px"}}>
+                                    <Card.Section>
+                                        <Image
+                                            src={flashtastic}
+                                            height={350}
+                                            alt="Flashtastic"
+                                            fit="cover"
+                                        />
+                                    </Card.Section>
+
+                                    <Group position="center" mt="md" mb="xs">
+                                        <Text weight={500} size="xl">"Flashtastic" - A Flashcard App</Text>
+                                    </Group>
+
+                                    <Text size="sm" color="dimmed">
+                                        A flashcard web application to help streamline concept learning and
+                                        memorization.
+                                        The application
+                                        provides intuitive and responsive user interface that supports study set
+                                        creation, editing,
+                                        and practicing.
+                                    </Text>
+
+                                    <Group mt="md">
+                                        <Badge color="pink" variant="light" classNames={{root: "badge"}}>
+                                            JavaScript
+                                        </Badge>
+                                        <Badge color="pink" variant="light" classNames={{root: "badge"}}>
+                                            React.JS
+                                        </Badge>
+                                        <Badge color="pink" variant="light" classNames={{root: "badge"}}>
+                                            Firebase API
+                                        </Badge>
+                                    </Group>
+                                    <Button variant="light" color="blue" fullWidth mt="md" radius="md" onClick={() =>
+                                        window.open('https://github.com/wustlcse204/10-final-project-individual-finleylee2507', '_blank')
+                                    }>
+                                        Project Link
+                                    </Button>
+                                </Card>
+                            </Carousel.Slide>
+
+                            <Carousel.Slide>
+
+                                {/*Personal Health Assistant*/}
+                                <Card shadow="sm" padding="lg" radius="md" withBorder sx={{width: "700px"}}>
+                                    <Card.Section>
+                                        <Image
+                                            src={personalHealthAssistant}
+                                            height={350}
+                                            alt="Personal Health Assistant"
+                                            fit="cover"
+                                        />
+                                    </Card.Section>
+
+                                    <Group position="center" mt="md" mb="xs">
+                                        <Text weight={500} size="xl">Personal Health Assistant</Text>
+
+                                    </Group>
+
+                                    <Text size="sm" color="dimmed">
+                                        A web application that allows users to create food logs and automatically
+                                        calculates caloric
+                                        recommendations based on user inputted goals and weight.
+                                    </Text>
+
+                                    <Group mt="md">
+                                        <Badge color="pink" variant="light" classNames={{root: "badge"}}>
+                                            JavaScript
+                                        </Badge>
+                                        <Badge color="pink" variant="light" classNames={{root: "badge"}}>
+                                            React.JS
+                                        </Badge>
+                                        <Badge color="pink" variant="light" classNames={{root: "badge"}}>
+                                            Node.JS
+                                        </Badge>
+                                        <Badge color="pink" variant="light" classNames={{root: "badge"}}>
+                                            MongoDB
+                                        </Badge>
+                                        <Badge color="pink" variant="light" classNames={{root: "badge"}}>
+                                            Express.JS
+                                        </Badge>
+                                    </Group>
+                                    <Button variant="light" color="blue" fullWidth mt="md" radius="md"
+                                            onClick={() => window.open('https://github.com/finleylee2507/WUSTL-Projects/tree/master/CSE%20330/Final%20Creative%20Project', '_blank')}>
+                                        Project Link
+                                    </Button>
+                                </Card>
+
+                            </Carousel.Slide>
+
+                            <Carousel.Slide>
+
+                                {/*Cell Measurement GUI*/}
+                                <Card shadow="sm" padding="lg" radius="md" withBorder sx={{width: "700px"}}>
+                                    <Card.Section>
+                                        <Image
+                                            src={spermCellGui}
+                                            height={350}
+                                            alt="Sperm Cell Measurement GUI"
+                                            fit="cover"
+                                        />
+                                    </Card.Section>
+
+                                    <Group position="center" mt="md" mb="xs">
+                                        <Text weight={500} size="xl">Sperm Cell Measurement GUI</Text>
+
+                                    </Group>
+
+                                    <Text size="sm" color="dimmed">
+
+                                        A fast, accurate and semi-automated measurement tool for sperm cell. The tool
+                                        utilizes
+                                        advanced geometric computing algorithms such as flood-fill and cell-complex
+                                        thinning.
+                                    </Text>
+
+                                    <Group mt="md">
+                                        <Badge color="pink" variant="light" classNames={{root: "badge"}}>
+                                            MATLAB
+                                        </Badge>
+                                        <Badge color="pink" variant="light" classNames={{root: "badge"}}>
+                                            Python
+                                        </Badge>
+                                        <Badge color="pink" variant="light" classNames={{root: "badge"}}>
+                                            Algorithms
+                                        </Badge>
+                                    </Group>
+                                    <Button variant="light" color="blue" fullWidth mt="md" radius="md"
+                                            onClick={() => window.open('https://github.com/finleylee2507/Sperm-Cell-Measurement-GUI', '_blank')}>
+                                        Project Link
+                                    </Button>
+                                </Card>
+
+                            </Carousel.Slide>
+
+                            <Carousel.Slide>
+
+                                {/*Faster R-CNN*/}
+                                <Card shadow="sm" padding="lg" radius="md" withBorder sx={{width: "700px"}}>
+                                    <Card.Section>
+                                        <Image
+                                            src={objectDetector}
+                                            height={350}
+                                            alt="Faster R-CNN with GAN Integration"
+                                            fit="cover"
+                                        />
+                                    </Card.Section>
+
+                                    <Group position="center" mt="md" mb="xs">
+                                        <Text weight={500} size="xl">Faster R-CNN with GAN Integration</Text>
+
+                                    </Group>
+
+                                    <Text size="sm" color="dimmed">
+                                        A vision-based object detector capable of performing detection and
+                                        classification on images and
+                                        videos. The detector uses Generative Adversarial Networks (GAN) to improve
+                                        detection
+                                        accuracy.
+                                    </Text>
+
+                                    <Group mt="md">
+                                        <Badge color="pink" variant="light" classNames={{root: "badge"}}>
+                                            Python
+                                        </Badge>
+                                        <Badge color="pink" variant="light" classNames={{root: "badge"}}>
+                                            Tensorflow
+                                        </Badge>
+                                        <Badge color="pink" variant="light" classNames={{root: "badge"}}>
+                                            Computer Vision
+                                        </Badge>
+                                        <Badge color="pink" variant="light" classNames={{root: "badge"}}>
+                                            Machine Learning
+                                        </Badge>
+                                    </Group>
+                                    <Button variant="light" color="blue" fullWidth mt="md" radius="md"
+                                            onClick={() => window.open('https://github.com/finleylee2507/My-Faster-RCNN-for-Object-Detection', '_blank')}>
+                                        Project Link
+                                    </Button>
+                                </Card>
+                            </Carousel.Slide>
+                        </Carousel>
+                    </div>
                     <div className="project-list">
-                        <div className="project">
-                            <img src={personalHealthAssistant} alt="Personal Health Assistant"/>
-                            <div className="layer">
-                                <p>A web application that allows users to create food logs and automatically
-                                    calculates caloric
-                                    recommendations based on user inputted goals and weight.</p>
-                                <div className="tech-used">
-                                    <span>JavaScript</span>
-                                    <span>React.JS</span>
-                                    <span>Node.JS</span>
-                                    <span>MongoDB</span>
-                                    <span>Express.JS</span>
-
-                                </div>
-                                <a href="https://github.com/finleylee2507/WUSTL-Projects/tree/master/CSE%20330/Final%20Creative%20Project"
-                                   target="_blank"><i
-                                    className="fa-solid fa-arrow-up-right-from-square"></i></a>
-                            </div>
-                            <p className="project-title">Personal Health Assistant</p>
-                        </div>
-
-                        <div className="project">
-                            <img src={flashtastic} alt="Flashcard App"/>
-                            <div className="layer">
-                                <p>A flashcard web application to help streamline concept learning and memorization.
-                                    The application
-                                    provides intuitive and responsive user interface that supports study set
-                                    creation, editing,
-                                    saving, and practicing. </p>
-                                <div className="tech-used">
-                                    <span>JavaScript</span>
-                                    <span>React.JS</span>
-                                    <span>Firebase API</span>
-                                </div>
-                                <a href="https://github.com/wustlcse204/10-final-project-individual-finleylee2507"
-                                   target="_blank"><i
-                                    className="fa-solid fa-arrow-up-right-from-square"></i></a>
-                            </div>
-                            <p className="project-title">"Flashtastic - A Flashcard App"</p>
-
-
-                        </div>
-                        <div className="project">
-                            <img src={spermCellGui} alt="Cell Measurement GUI"/>
-                            <div className="layer">
-                                <p>An effective, semi-automated measurement tool that allows the users to
-                                    accurately measure the length of sperm cells in less than one minute. The tool
-                                    utilizes advanced
-                                    geometric computing algorithms such as flood-fill and cell-complex thinning.</p>
-                                <div className="tech-used">
-                                    <span>MATLAB</span>
-                                    <span>Python</span>
-                                    <span>Algorithms</span>
-                                </div>
-                                <a href="https://github.com/finleylee2507/Sperm-Cell-Measurement-GUI"
-                                   target="_blank"><i
-                                    className="fa-solid fa-arrow-up-right-from-square"></i></a>
-                            </div>
-                            <p className="project-title">Cell Measurement GUI</p>
-                        </div>
-                        <div className="project">
-                            <img src={objectDetector} alt="Faster R-CNN Detector"/>
-                            <div className="layer">
-                                <p>
-                                    A vision-based object detector capable of performing detection and
-                                    classification on images and
-                                    videos.
-                                </p>
-
-                                <div className="tech-used">
-                                    <span>Python</span>
-                                    <span>Tensorflow</span>
-                                    <span>Computer Vision</span>
-                                    <span>Machine Learning</span>
-
-                                </div>
-                                <a href="https://github.com/finleylee2507/My-Faster-RCNN-for-Object-Detection"
-                                   target="_blank"><i
-                                    className="fa-solid fa-arrow-up-right-from-square"></i></a>
-                            </div>
-                            <p className="project-title">Faster R-CNN Detector with GAN Integration</p>
-                        </div>
 
 
                     </div>
