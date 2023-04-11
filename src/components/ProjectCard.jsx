@@ -6,7 +6,6 @@ const ProjectCard=({projectData})=> {
     return (
 
         <Card shadow="sm" padding="lg" radius="md" withBorder sx={{
-            // width: "700px"
 
         }}>
             <Card.Section>
