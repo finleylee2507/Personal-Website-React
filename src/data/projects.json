@@ -1,0 +1,70 @@
+{
+  "projects": [
+    {
+      "projectPic": "src/images/kidsync.png",
+      "projectTitle": "Kidsync",
+      "projectDescription": "An information sharing app that helps co-parents, caretakers, and babysitters communicate and stay updated about changes to their children's schedule in real-time.",
+      "technologies": [
+        "JavaScript",
+        "React.JS",
+        "Bootstrap",
+        "Firebase API"
+      ],
+      "projectLink": "https://github.com/394-w23/YourTurn"
+    },
+    {
+      "projectPic": "src/images/matchpoint.png",
+      "projectTitle": "MatchPoint",
+      "projectDescription": "A a pickup sports game organization app for Northwestern University students. It offers a wide range of sports and skill levels to join and expand social circles.",
+      "technologies": [
+        "JavaScript",
+        "React.JS",
+        "Firebase API"
+      ],
+      "projectLink": "https://github.com/394-w23/MatchPoint"
+    }
+
+    ,{
+      "projectPic": "src/images/flashtastic.png",
+      "projectTitle": "\"Flashtastic\" - A Flashcard App",
+      "projectDescription": " A flashcard web application to help streamline concept learning and memorization. The application provides intuitive and responsive user interface that supports study set creation, editing, and practicing.",
+      "technologies": [
+        "JavaScript",
+        "React.JS",
+        "Firebase API"
+      ],
+      "projectLink": "https://github.com/wustlcse204/10-final-project-individual-finleylee2507"
+    },
+    {
+      "projectPic": "src/images/personal-health-assistant.png",
+      "projectTitle": "Personal Health Assistant",
+      "projectDescription": " A web application that allows users to create food logs and automatically calculates caloric recommendations based on user inputted goals and weight.",
+      "technologies": [
+        "JavaScript",
+        "React.JS",
+        "Node.JS",
+        "MongoDB",
+        "Express.JS"
+      ],
+      "projectLink": "https://github.com/finleylee2507/WUSTL-Projects/tree/master/CSE%20330/Final%20Creative%20Project"
+    },
+    {
+      "projectPic": "src/images/sperm-cell-gui.png",
+      "projectTitle": "Sperm Cell Measurement GUI",
+      "projectDescription": "A fast, accurate and semi-automated measurement tool for sperm cell. The tool utilizes advanced geometric computing algorithms such as flood-fill and cell-complex thinning.",
+      "technologies": [
+        "MATLAB", "Python","Algorithms"
+      ],
+      "projectLink": "https://github.com/finleylee2507/Sperm-Cell-Measurement-GUI"
+    },
+    {
+      "projectPic": "src/images/object-detector.png",
+      "projectTitle": "Faster R-CNN with GAN Integration",
+      "projectDescription": "A vision-based object detector capable of performing detection and classification on images and videos. The detector uses Generative Adversarial Networks (GAN) to improve detection accuracy.",
+      "technologies": [
+        "Python","Tensorflow","Computer Vision","Machine Learning"
+      ],
+      "projectLink": "https://github.com/finleylee2507/My-Faster-RCNN-for-Object-Detection"
+    }
+  ]
+}
